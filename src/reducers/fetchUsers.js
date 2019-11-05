@@ -1,6 +1,6 @@
 const initialState = {
   loading: false,
-  users: [],
+  posts: [],
   error: ""
 };
 
@@ -13,14 +13,16 @@ const fetchUsersReducer = (state = initialState, action) => {
       };
     case "FETCH_USERS_SUCCESS":
       return {
+        ...state,
         loading: false,
-        users: action.payload,
+        posts: action.payload,
         error: ""
       };
     case "FETCH_USERS_FAILURE":
       return {
+        ...state,
         loading: false,
-        users: [],
+        posts: [],
         error: action.payload
       };
     default:
