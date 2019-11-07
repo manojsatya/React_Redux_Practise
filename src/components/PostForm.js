@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPost } from "../actions";
 
 export default function PostForm() {
   const [title, setTitle] = useState("");
@@ -40,14 +41,6 @@ export default function PostForm() {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     //console.log(data);
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(json => console.log(json));
+    createPost(data);
   }
 }

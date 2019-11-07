@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, fetchUsers } from "../actions";
+import { increment, decrement, fetchPosts } from "../actions";
 import "./App.css";
 import Posts from "./Posts";
 import PostForm from "./PostForm";
@@ -11,10 +11,10 @@ function App() {
   const posts = useSelector(state => state.fetchUsers.posts);
 
   const dispatch = useDispatch();
-  const getUsers = () => dispatch(fetchUsers());
+  const getPosts = () => dispatch(fetchPosts());
 
   useEffect(() => {
-    getUsers();
+    getPosts();
   });
 
   return (

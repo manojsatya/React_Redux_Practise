@@ -1,6 +1,6 @@
 import counterReducer from "./counter";
 import loggedReducer from "./isLogged";
-import fetchUsersReducer from "./fetchUsers";
+import fetchUsersReducer from "./fetchPosts";
 
 import { combineReducers } from "redux";
 
